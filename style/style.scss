@@ -1,0 +1,159 @@
+@import "./var.scss";
+
+//reset CSS
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    width: 100vw;
+    height: 100vh;
+}
+
+body {
+    font-family:'Poppins', sans-serif;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    appearance: none;
+    margin: 0;
+}
+
+//Styling
+
+body {
+    display: grid;
+    place-items: center;
+    background-color: $OffWhite;
+
+    main {
+        background-color: $White;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 600px;
+        height: 400px;
+        padding: 1rem;
+        border-radius: 10px 10px 30% 10px;
+
+        .date {
+            position: relative;
+            display: flex;
+            gap: 1.5rem;
+            padding: 2rem;
+            input {
+                width: 95px;
+                height: 45px;
+                font-weight: 700;
+                font-size: 22px;
+                padding: 1rem;
+                border-radius: 5px;
+                border-color: $LightGrey;
+                border-style: solid;
+                border-width: .8px;
+                cursor: pointer;
+
+                &:focus {
+                    outline-color: $SmokeyGrey;
+                }
+            }
+            
+            label {
+                position: absolute;
+                bottom: 1.5rem;
+                left: 1.5rem;
+                font-weight: 700;
+                font-size: 14px;
+                letter-spacing: 2px;
+                color: $SmokeyGrey;
+
+                    &:nth-child(1) {
+                        top: .5rem;
+                        left: 2rem;
+                }
+
+                    &:nth-child(3) {
+                        top: .5rem;
+                        left: 9.4rem;
+                }
+                
+                    &:nth-child(5) {
+                        top: .5rem;
+                        left: 16.8rem;
+                }
+            }
+            
+            span {
+                position: absolute;
+                font-weight: 400;
+                font-style: italic;
+                font-size: 12px;
+                color: $LightRed;
+
+            }
+            .day {
+                bottom: 1em;
+            }
+            .month {
+                bottom: 1em;
+                left: 9.5rem;
+            }
+            .year {
+                bottom: 1em;
+                left: 17rem;
+            }
+        }
+
+        .arrow {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            padding: 2rem;
+            margin-top: -50px;
+            div {
+                background-color: $LightGrey;
+                width: 90%;
+                height: 1.2px;
+            }
+            svg {
+                cursor: pointer;
+                background-color: $Purple;
+                padding: 1.1rem;
+                width: 70px;
+                height: 70px;
+                border-radius: 100%;
+                g {
+                    stroke-width: 1.5;
+                }
+
+                &:hover {
+                    background-color: $OffBlack;
+                }
+            }
+        }
+
+        .output {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-left: 2rem;
+            font-weight: 800;
+            font-style: italic;
+            font-size: 38px;
+
+            p{  
+                display: flex;
+                gap: .5rem;
+                color: $OffBlack;
+                span {
+                    color: $Purple;
+                }
+            }
+        }
+    }
+}

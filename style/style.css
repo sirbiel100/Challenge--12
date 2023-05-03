@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  width: 100vw;
+  height: 100vh;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+          appearance: none;
+  margin: 0;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  background-color: hsl(0, 0%, 94%);
+}
+body main {
+  background-color: hsl(0, 0%, 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 600px;
+  height: 400px;
+  padding: 1rem;
+  border-radius: 10px 10px 30% 10px;
+}
+body main .date {
+  position: relative;
+  display: flex;
+  gap: 1.5rem;
+  padding: 2rem;
+}
+body main .date input {
+  width: 95px;
+  height: 45px;
+  font-weight: 700;
+  font-size: 22px;
+  padding: 1rem;
+  border-radius: 5px;
+  border-color: hsl(0, 0%, 86%);
+  border-style: solid;
+  border-width: 0.8px;
+  cursor: pointer;
+}
+body main .date input:focus {
+  outline-color: hsl(0, 1%, 44%);
+}
+body main .date label {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: hsl(0, 1%, 44%);
+}
+body main .date label:nth-child(1) {
+  top: 0.5rem;
+  left: 2rem;
+}
+body main .date label:nth-child(3) {
+  top: 0.5rem;
+  left: 9.4rem;
+}
+body main .date label:nth-child(5) {
+  top: 0.5rem;
+  left: 16.8rem;
+}
+body main .date span {
+  position: absolute;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 12px;
+  color: hsl(0, 100%, 67%);
+}
+body main .date .day {
+  bottom: 1em;
+}
+body main .date .month {
+  bottom: 1em;
+  left: 9.5rem;
+}
+body main .date .year {
+  bottom: 1em;
+  left: 17rem;
+}
+body main .arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 2rem;
+  margin-top: -50px;
+}
+body main .arrow div {
+  background-color: hsl(0, 0%, 86%);
+  width: 90%;
+  height: 1.2px;
+}
+body main .arrow svg {
+  cursor: pointer;
+  background-color: hsl(259, 100%, 65%);
+  padding: 1.1rem;
+  width: 70px;
+  height: 70px;
+  border-radius: 100%;
+}
+body main .arrow svg g {
+  stroke-width: 1.5;
+}
+body main .arrow svg:hover {
+  background-color: hsl(0, 0%, 8%);
+}
+body main .output {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 2rem;
+  font-weight: 800;
+  font-style: italic;
+  font-size: 38px;
+}
+body main .output p {
+  display: flex;
+  gap: 0.5rem;
+  color: hsl(0, 0%, 8%);
+}
+body main .output p span {
+  color: hsl(259, 100%, 65%);
+}/*# sourceMappingURL=style.css.map */
