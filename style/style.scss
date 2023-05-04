@@ -120,6 +120,10 @@ body {
                 width: 90%;
                 height: 1.2px;
             }
+            button {
+                background-color: transparent;
+                border: none;
+            }
             svg {
                 cursor: pointer;
                 background-color: $Purple;
@@ -156,4 +160,32 @@ body {
             }
         }
     }
+}
+
+
+@media (max-width: 470px) {
+
+    main {
+        width: 1px;
+        height: auto;
+    }
+
+    .date {
+        gap: 1rem;
+
+        input {
+            width: 60px;
+            height: 30px;
+            font-size: 18px;
+        }
+    }
+
+    .arrow {
+        width: 80%;
+        position: relative;
+        svg {
+            position: absolute;
+        }
+    }
+    
 }

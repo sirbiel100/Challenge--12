@@ -109,6 +109,10 @@ body main .arrow div {
   width: 90%;
   height: 1.2px;
 }
+body main .arrow button {
+  background-color: transparent;
+  border: none;
+}
 body main .arrow svg {
   cursor: pointer;
   background-color: hsl(259, 100%, 65%);
@@ -139,4 +143,26 @@ body main .output p {
 }
 body main .output p span {
   color: hsl(259, 100%, 65%);
+}
+
+@media (max-width: 470px) {
+  main {
+    width: 1px;
+    height: auto;
+  }
+  .date {
+    gap: 1rem;
+  }
+  .date input {
+    width: 60px;
+    height: 30px;
+    font-size: 18px;
+  }
+  .arrow {
+    width: 80%;
+    position: relative;
+  }
+  .arrow svg {
+    position: absolute;
+  }
 }/*# sourceMappingURL=style.css.map */

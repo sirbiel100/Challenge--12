@@ -1,74 +1,96 @@
 // Error Message
-const days = document.querySelector('#day-error');
-const months = document.querySelector('#month-error')
-const years = document.querySelector('#year-error')
+const error_days = document.querySelector('#day-error');
+const error_months = document.querySelector('#month-error');
+const erro_years = document.querySelector('#year-error');
 // Output
-const daysResult = document.querySelector('#days')
-const monthsResult = document.querySelector('#months')
-const yearsResult = document.querySelector('#years')
+const daysResult = document.querySelector('#days');
+const monthsResult = document.querySelector('#months');
+const yearsResult = document.querySelector('#years');
 // Inputs
-const showDays = document.querySelector('#day')
-const showMonths = document.querySelector('#month')
-const showYears = document.querySelector('#year')
+let isValid = false;
+const showDays = document.querySelector('#day');
+const showMonths = document.querySelector('#month');
+const showYears = document.querySelector('#year');
 
-const TODAY = new Date() 
-const date = date.gateDate();
-const month = 1 + date.getMonth();
-const year = date.getFullYear();
+const submitBttn = document.querySelector('#submitButton');
+
+submitBttn.addEventListener('click', CalculateDT)
 
 
-showDays.addEventListener('input', (dayEvent) => {
-    const inputDay = dayEvent.target
-    if (inputDay.validity.valid) {
-        
+showDays.addEventListener('input', (e) => {
+    if(showDays.value > 31) {
+        error_days.innerHTML = 'Must be a valid date';
+        isValid = false;
+        return;
     } else {
-        if (inputDay.validity.valueMissing) {
-            days.innerHTML = 'This field is requiered';
-        } else if (inputDay.validity.patternMismatch) {
-            days.innerHTML = 'Must be a valid day';
-        } else if (inputElement.validity.typeMismatch || showDays.value > 31) {
-            days.innerHTML = 'Must be a valid date';
-        } else {days.innerHTML = ''}
+        isValid = true;
+        error_days.innerHTML = '';
     }
+    if (+showDays.value === 0) {
+        isValid = false;
+        error_days.innerHTML = 'This Field is requiered';
+        isValid = false;
+        return;
+    } else {}
+    
+    
 })
 
-showMonths.addEventListener('input', (monthEvent) => {
-    const inputDay = monthEvent.target
-    if (inputDay.validity.valid) {
-        
+showMonths.addEventListener('input', (e) => {
+    if(showMonths.value > 12) {
+        error_months.innerHTML = 'Must be a valid date';
+        isValid = false;
+        return;
     } else {
-        if (inputDay.validity.valueMissing) {
-            months.innerHTML = 'This field is requiered';
-        } else if (inputDay.validity.patternMismatch) {
-            months.innerHTML = 'Must be a valid month';
-        } else if (inputElement.validity.typeMismatch || showMonths.value > 12) {
-            months.innerHTML = 'Must be a valid date';
-        } else {months.innerHTML = ''}
+        isValid = true;
+        error_months.innerHTML = '';
     }
+    if (+showMonths.value === 0) {
+        isValid = false;
+        error_months.innerHTML = 'This Field is requiered';
+        isValid = false;
+        return;
+    } else {}
+    
+    
 })
 
-showYears.addEventListener('input', (yearEvent) => {
-    const inputDay = yearEvent.target
-    if (inputDay.validity.valid) {
-        years.innerHTML = ''
+showYears.addEventListener('input', (e) => {
+    if(showYears.value > 2023) {
+        erro_years.innerHTML = 'Must be in the past';
+        isValid = false;
+        return;
     } else {
-        if (inputDay.validity.valueMissing) {
-            years.innerHTML = 'This field is requiered';
-        } else if (inputDay.validity.patternMismatch) {
-            years.innerHTML = 'Must be in the past';
-            
-        } else if (yearEvent.value > 2023) {
-            years.innerHTML = 'Must be in the past'
-
-        }else if (inputElement.validity.typeMismatch) {
-            years.innerHTML = 'Must be a valid date';
-
-        } else {years.innerHTML = ''}
+        isValid = true;
+        erro_years.innerHTML = '';
     }
+    if (+showYears.value === 0) {
+        isValid = false;
+        erro_years.innerHTML = 'This Field is requiered';
+        isValid = false;
+        return;
+    } else {}
+    
+    
 })
 
-function submit () {
-    window.alert('Oi')
+function CalculateDT() {
+    
+    if(isValid) {
+        let birthday = `${showMonths.value}/${showDays.value}/${showYears.value}`;
+        console.log(birthday)
+        let birthdayObj = new Date(birthday);
+        let ageDiffMill = Date.now() - birthdayObj;
+        let ageDate = new Date(ageDiffMill);
+        let ageYears = ageDate.getUTCFullYear() - 1970;
+        let ageMonth = ageDate.getUTCMonth();
+        let ageDay = ageDate.getUTCDay() - 1;
+        daysResult.textContent = ageDay;
+        monthsResult.textContent = ageMonth;
+        yearsResult.textContent = ageYears;
+    } else {
+        alert('error');
+    }
 }
 
 
