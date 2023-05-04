@@ -12,11 +12,11 @@
     <main>
         <div class="date">
             <label for="day">Day</label>
-            <input type="day" name="day" id="day" pattern="[1-31]{2}" placeholder="DD" required>
+            <input type="day" name="day" id="day" pattern="[0-31]{1,2}" placeholder="DD" required>
             <label for="month">Month</label>
-            <input type="day" name="month" id="month" pattern="[0-12]{2}" placeholder="MM" required>
+            <input type="day" name="month" id="month" pattern="[0-12]{1,2}" placeholder="MM" required>
             <label for="year">Year</label>
-            <input type="year" name="year" id="year" pattern="[1900-2023]{4}" placeholder="YYYY" required>
+            <input type="year" name="year" id="year" pattern="[1000-2023]{4}" placeholder="YYYY" required>
 
             <span class="day" id="day-error"></span>
             <span class="month" id="month-error"></span>
@@ -24,7 +24,7 @@
         </div>
         <div class="arrow">
             <div></div>
-            <svg xmlns="http://www.w3.org/2000/svg" width="46" height="44" viewBox="0 0 46 44">
+            <svg xmlns="http://www.w3.org/2000/svg" width="46" height="44" viewBox="0 0 46 44" onclick="submit()">
                 <g fill="none" stroke="#FFF" stroke-width="2">
                     <path d="M1 22.019C8.333 21.686 23 25.616 23 44M23 44V0M45 22.019C37.667 21.686 23 25.616 23 44"/>
                 </g>
