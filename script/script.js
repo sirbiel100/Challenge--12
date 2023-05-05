@@ -106,7 +106,7 @@ function CalculateDT() {
         let ageDate = new Date(ageDiffMill);
         let ageYears = ageDate.getUTCFullYear() - 1970;
         let ageMonth = ageDate.getUTCMonth();
-        let ageDay = ageDate.getUTCDay() - 1;
+        let ageDay = ageDate.getUTCDay();
         daysResult.textContent = ageDay;
         monthsResult.textContent = ageMonth;
         yearsResult.textContent = ageYears;
