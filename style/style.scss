@@ -154,7 +154,7 @@ body {
                 display: flex;
                 gap: .5rem;
                 color: $OffBlack;
-                span {
+                span {        
                     color: $Purple;
                 }
             }
@@ -239,5 +239,6 @@ body {
     .output {
         margin: 7rem 0 0 1.5rem !important;
         font-size: 34px !important;
+        
     }
 }
